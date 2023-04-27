@@ -1,0 +1,80 @@
+:root{
+    --red: #D33F49;
+    --space: #2B2D42;
+    --light-space: #353652;
+    --dark-space: #24263B;
+    --white: #EEEEFF;
+    --lavender: #7F7CAF;
+}
+body{
+    background-color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+header{
+    background-color: var(--space);
+    padding: 10px;
+} 
+.nav-link{
+    color: var(--white);
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.nav-link:hover{
+    background-color: var(--light-space);
+    color: var(--white);
+    text-decoration: none;
+}
+.nav-link :active{
+    background-color: var(--space);
+    color: var(--white);
+    text-decoration: none;
+}
+.nav-link:visited{
+    color: var(--white);
+    text-decoration: none;
+}
+.nav-link:focus{
+    color: var(--white);
+    text-decoration: none;
+}
+.title{
+    width: 400px;
+    font-size: 42px;
+    color: var(--white);
+    text-shadow: 2px 2px var(--lavender);
+    border-bottom: 3px solid var(--red);
+    border-right: 3px solid var(--red);
+}
+.post-card{
+    background-color: #fff;
+    border: 3px solid var(--space);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px #ccc;
+}
+.post-card-link{
+    color: var(--space);
+    text-decoration: none;
+}
+.post-card-link:hover{
+    background-color: var(--light-space);
+    color: var(--white);
+    text-decoration: none;
+}
+.post-card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--space);
+    border-bottom: 3px solid var(--red);
+}
+.post-title{
+    color: var(--white);
+    text-shadow: 2px 2px var(--lavender);
+}
+.post-author{
+    color: var(--lavender);
+}

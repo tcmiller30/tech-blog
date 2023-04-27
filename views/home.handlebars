@@ -1,4 +1,18 @@
-<div class="text-center">
-    <h1>Home</h1>
-    <p class="lead">Welcome to the home page</p>
-</div>
+{{!-- {{each}} --}}
+<main id="postContainer" class="container">
+    <article class="d-flex post-card flex-column p-0">
+        <a class="post-card-link" href="#">
+            <div class="post-card-header w-100 mx-0 py-1">
+                {{!-- {{title}} --}}
+                <h3 class="post-title ms-4">Why MVC is so Important</h3>
+                {{!-- Posted by {{author}} on {{date}} --}}
+                <h5 class="post-author me-4">Posted by g0b1in on 04/26/2023</h5>
+            </div>
+            <p class="post-content m-4">
+                MVC allows developers to maintain a true separation of concerns, 
+                devising their code bewtween the Model layer for data, the View layer for design, 
+                and the Controller layer for application logic.
+            </p>
+        </a>
+    </article>
+</main>
