@@ -14,7 +14,18 @@ body{
 header{
     background-color: var(--space);
     padding: 10px;
-} 
+}
+#pills-login-tab, #pills-signup-tab{
+    background-color: var(--space);
+    color: var(--white);
+    border: 3px solid var(--red);
+    border-radius: 5px;
+}
+#pills-login-tab:hover, #pills-signup-tab:hover{
+    background-color: var(--light-space);
+    color: var(--white);
+}
+
 .nav-link{
     color: var(--white);
     font-size: 20px;
@@ -40,12 +51,14 @@ header{
     text-decoration: none;
 }
 .title{
-    width: 400px;
+    width: 40%;
+    min-width: 225px;
     font-size: 42px;
     color: var(--white);
     text-shadow: 2px 2px var(--lavender);
     border-bottom: 3px solid var(--red);
     border-right: 3px solid var(--red);
+    border-radius: 0 0 20px 0;
 }
 .post-card{
     background-color: #fff;
@@ -77,4 +90,23 @@ header{
 }
 .post-author{
     color: var(--lavender);
+}
+
+@media screen and (max-width: 576px){
+    .nav-link{
+        font-size: 16px;
+        
+    }
+    .title{
+        width: 40%;
+        font-size: 28px;
+        
+    }
+    .post-card{
+        width: 100%;
+    }
+    .post-card-header{
+        flex-direction: column;
+        max-height: 100px;
+    }
 }
