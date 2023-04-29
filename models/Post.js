@@ -5,7 +5,7 @@ class Post extends Model {}
 
 Post.init(
     {
-        // Id for data relation
+        // Post Id
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -14,11 +14,6 @@ Post.init(
         },
         // Title of post
         title:{
-            type: DataTypes.STRING,
-            allownull: false,
-        },
-        // Author of post
-        author:{
             type: DataTypes.STRING,
             allownull: false,
         },
