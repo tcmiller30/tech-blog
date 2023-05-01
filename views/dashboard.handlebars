@@ -5,7 +5,7 @@
         <a class="dash-post-link" href="/posts/{{post.id}}">
             <div class="dash-post w-100 mx-0 py-1">
                 <h3 class="post-title ms-md-4"> {{post.title}} </h3>
-                <h5 class="post-author me-md-4">Posted on {{post.date_created}}</h5>
+                <h5 class="post-author me-md-4">Posted on {{format_date post.date_created}}</h5>
             </div>
         </a>
     {{/each}}

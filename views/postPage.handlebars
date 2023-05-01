@@ -1,7 +1,7 @@
 <main class="d-flex post-card flex-column w-75 mx-auto p-0">
     <div class="post-card-header w-100 mx-0 py-1">
             <h3 class="post-title ms-md-4"> {{post.title}} </h3>
-            <h5 class="post-author me-md-4">Posted by {{user.name}} on {{post.date_created}}</h5>
+            <h5 class="post-author me-md-4">Posted by {{user.name}} on {{formate_date post.date_created}}</h5>
         </div>
         <p class="post-content m-4">
             {{post.content}}
