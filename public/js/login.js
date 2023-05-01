@@ -13,7 +13,7 @@ if (name && password) {
         body: JSON.stringify({ name, password }),
         headers: { 'Content-Type': 'application/json' },
     });
-
+console.log(response);
     if (response.ok) {
         // If successful, redirect the browser to the dashboard page
         document.location.replace('/dashboard');
@@ -24,8 +24,8 @@ if (name && password) {
 };
 
 document
-.getElementById('loginForm')
-.addEventListener('submit', loginFormHandler);
+.getElementById('loginSubmit')
+.addEventListener('click', loginFormHandler);
 
 // Signup logic
 const signupFormHandler = async (event) => {
@@ -53,5 +53,5 @@ if (name && password) {
 };
 
 document
-.getElementById('signupForm')
-.addEventListener('submit', signupFormHandler);
+.getElementById('signupSubmit')
+.addEventListener('click', signupFormHandler);
