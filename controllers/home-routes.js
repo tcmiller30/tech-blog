@@ -61,8 +61,28 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
-router.get('/project', async (req, res) => {
-    res.render('project');
+// Get one project from database and render
+router.get('/posts/:id', async (req, res) => {
+    try{
+        const postData = await Post.findByPk(req.params.id, {
+            attributes: ['id', 'title', 'content', 'date_created'],
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+            ],
+        });
+        // Serialize postData for template
+        const post = postData.get({ plain: true});
+
+        res.render('postPage', {
+            post,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 module.exports = router;

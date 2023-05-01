@@ -68,11 +68,11 @@ header{
     margin-bottom: 10px;
     box-shadow: 0 0 5px #ccc;
 }
-.post-card-link{
+.post-card-link, .dash-post-link{
     color: var(--space);
     text-decoration: none;
 }
-.post-card-link:hover{
+.post-card-link:hover, .dash-post-link:hover{
     background-color: var(--light-space);
     color: var(--white);
     text-decoration: none;
@@ -90,6 +90,14 @@ header{
 }
 .post-author{
     color: var(--lavender);
+}
+.dash-post{
+    background-color: var(--space);
+    border: 3px solid var(--red);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px #ccc;
 }
 
 @media screen and (max-width: 576px){

@@ -1,1 +1,13 @@
-<h1>Hello World!</h1>
+<main class="container w-75">
+    {{#if posts.length}}
+    <h2 class="text-center my-3">Your Posts</h2>
+    {{#each posts as |post|}}
+        <a class="dash-post-link" href="/posts/{{post.id}}">
+            <div class="dash-post w-100 mx-0 py-1">
+                <h3 class="post-title ms-md-4"> {{post.title}} </h3>
+                <h5 class="post-author me-md-4">Posted on {{post.date_created}}</h5>
+            </div>
+        </a>
+    {{/each}}
+{{/if}}
+</main>
