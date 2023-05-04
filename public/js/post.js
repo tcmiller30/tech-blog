@@ -20,5 +20,22 @@ const newPostHandler = async (event) => {
 };
 
 document
-    .getElementById('newPostSubmit')
+    .getElementById('newPostForm')
     .addEventListener('submit', newPostHandler);
+    
+// Delete the current post using the delete route
+const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('user_id')) {
+      const id = event.target.getAttribute('user_id');
+  
+      const response = await fetch(`/api/posts/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to delete project');
+      }
+    }
+  };

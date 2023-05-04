@@ -77,11 +77,17 @@ header{
     color: var(--white);
     text-decoration: none;
 }
-.post-card-header{
+.post-card-header, .post-card-footer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: var(--space);
+}
+.post-card-footer{
+    justify-content: center;
+    border-top: 3px solid var(--red);
+}
+.post-card-header{
+    justify-content: space-between;
     border-bottom: 3px solid var(--red);
 }
 .post-title{
@@ -98,6 +104,9 @@ header{
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: 0 0 5px #ccc;
+}
+.btn{
+    text-align: center;
 }
 
 @media screen and (max-width: 576px){
