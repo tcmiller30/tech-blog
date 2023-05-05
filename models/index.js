@@ -1,6 +1,7 @@
 // Tracks relationships between models
 const User = require('./User');
 const Post = require('./Post');
+const Comment = require('./Comment');
 
 // create associations
 Post.belongsTo(User, {
@@ -30,4 +31,4 @@ Post.hasMany(Comment, {
     onDelete: "CASCADE"
 });
 
-module.exports = { User, Post };
+module.exports = { User, Post , Comment};
