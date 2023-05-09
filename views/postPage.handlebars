@@ -1,4 +1,5 @@
-<main class="d-flex post-card flex-column w-75 mx-auto p-0">
+<main class="d-flex flex-column w-75 mx-auto">
+<div class="post-card p-0">
     <div class="post-card-header w-100 mx-0 py-1">
             <h3 class="post-title ms-md-4"> {{post.title}} </h3>
             <h5 class="post-author me-md-4">Posted by {{user.name}} on {{format_date post.date_created}}</h5>
@@ -9,5 +10,24 @@
     <div class="post-card-footer w-100 mx-0 py-1">
         <button id="deletePost" class="btn btn-secondary">Delete Post</button>
     </div>
-    }}
+    {{!-- If a post has comments, display the comments in a new box below the post-card --}}
+</div>
+    {{#if post.comments.length}}
+        <section class="comments w-50 mx-auto">
+            <h4 class="post-comments-header text-center p-2">Comments</h4>
+            <div class="container">
+            {{#each post.comments as |comment|}}
+                <div class="post-comment d-flex align-items-center justify-space-between mx-auto mb-3 w-100 py-3">
+                    <h5 class="comment-content me-md-4 my-auto">{{comment.content}}</h5>
+                    <h5 class="comment-author ms-md-4 my-auto">Posted by {{comment.user.name}} on {{format_date comment.date_created}}</h5>
+                </div>
+            {{/each}}
+            </div>
+        </section>
+    {{/if}}
+    {{!-- If the user is logged in, display a comment form --}}
+    {{#if loggedIn}}
+        <h4> WOOOOOOOOOOOOOO   </h4>
+    {{/if}}
+
 </main>

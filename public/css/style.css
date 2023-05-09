@@ -97,6 +97,27 @@ header{
 .post-author{
     color: var(--lavender);
 }
+.comments{
+    background-color: #fff;
+    border: 3px solid var(--space);
+    border-radius: 5px;
+
+}
+.comments-container{
+border-top: 3px solid var(--space);
+}
+.post-comments-header{
+    background-color: var(--space);
+    color: var(--white);
+    text-shadow: 2px 2px var(--lavender);
+    font-size: 28px;
+    border-bottom: 3px solid var(--red);
+}
+.post-comment{
+    /* border-top: 3px solid var(--light-space); */
+    border-bottom: 3px solid var(--light-space);
+}
+
 .dash-post{
     background-color: var(--space);
     border: 3px solid var(--red);

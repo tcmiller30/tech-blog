@@ -6,5 +6,21 @@
     {
         "name": "luftpal",
         "password": "password1234"
+    }, 
+    {
+        "name": "shmily",
+        "password": "password1234"
+    },
+    {
+        "name": "sam",
+        "password": "password1234"
+    },
+    {
+        "name": "sally",
+        "password": "password1234"
+    },
+    {
+        "name": "mike",
+        "password": "password1234"
     }
 ]
