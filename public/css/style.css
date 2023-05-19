@@ -101,7 +101,6 @@ header{
     background-color: #fff;
     border: 3px solid var(--space);
     border-radius: 5px;
-
 }
 .comments-container{
 border-top: 3px solid var(--space);
@@ -116,6 +115,9 @@ border-top: 3px solid var(--space);
 .post-comment{
     /* border-top: 3px solid var(--light-space); */
     border-bottom: 3px solid var(--light-space);
+}
+.comment-author{
+    border-right: 3px solid var(--red);
 }
 
 .dash-post{

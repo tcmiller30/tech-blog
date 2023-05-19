@@ -31,7 +31,7 @@ router.post('/login', async (req, res) => {
         }
         req.session.save(() => {
             req.session.user_id = userData.id;
-            // req.session.name = userData.name;
+            req.session.name = userData.name;
             req.session.logged_in = true;
             res.json({user: userData, message: 'You are now logged in!'});
         });
@@ -68,6 +68,7 @@ router.get('/', async (req, res) => {
 // Check if user is logged in
 router.get('/status', (req, res) => {
     if(req.session.logged_in){
+        console.log(`Logged in as ${req.session.name}`);
         res.json({logged_in: true});
     } else {
         res.json({logged_in: false});

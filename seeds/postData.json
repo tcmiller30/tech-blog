@@ -18,20 +18,5 @@
         "title": "Seeding a Database",
         "date_created": "2022-11-09T10:40:42Z",
         "content": "Seeding a database is a process in which an initial set of data is provided to a database when it is being installed."
-     },
-     {
-        "title": "Using Sequelize",
-        "date_created":"2023-01-25T09:27:23Z",
-        "content": "Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server."
-     },
-     {
-        "title": "Using Handlebars",
-        "date_created": "2020-03-14T20:37:09Z",
-        "content": "Handlebars is a simple templating language. It uses a template and an input object to generate HTML or other text formats."
-     },
-     {
-        "title": "Making Full-Stack Applications",
-        "date_created": "2020-02-08T21:59:46Z",
-        "content": "I have really loved learning about ORM's. It really simplified the way I create queries and interact with my SQL databases."
      }
 ]
