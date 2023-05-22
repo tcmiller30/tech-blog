@@ -8,10 +8,22 @@
             {{post.content}}
         </p>
     <div class="post-card-footer w-100 mx-0 py-1">
-        <button id="deletePost" class="btn btn-secondary">Delete Post</button>
+        {{!-- If logged in user = Current Post's user_id, display delete button --}}
+       
+        {{#if is_owner}}
+            <<button id="deletePostBtn" class="btn btn-danger me-md-4">Delete Post</button>
+            <button id="editPostBtn" class="btn btn-primary  me-md-4">Edit Post</button>>
+        {{/if}}
     </div>
     {{!-- If a post has comments, display the comments in a new box below the post-card --}}
 </div>
+    {{!-- If the user is logged in, display a comment form --}}
+    {{#if logged_in}}
+        <form id="commentForm" class="comment-form d-flex flex-column align-items-center justify-content-center w-100 mx-auto">
+            <textarea class="comment-input w-75 mx-auto" name="comment-content" id="commentInput" cols="30" rows="2" placeholder="Enter your comment here..."></textarea>
+            <button id="submitCommentBtn" class="btn btn-primary submit-comment-btn mt-2">Submit Comment</button>
+        </form>
+    {{/if}}
     {{#if post.comments.length}}
         <section class="comments w-50 mx-auto">
             <h4 class="post-comments-header text-center p-2">Comments</h4>
@@ -19,15 +31,12 @@
             {{#each post.comments as |comment|}}
                 <div class="post-comment d-flex align-items-center justify-space-between mx-auto mb-3 w-100 py-3">
                     <h5 class="comment-content me-md-4 my-auto">{{comment.content}}</h5>
-                    <h5 class="comment-author ms-md-4 my-auto">Posted by {{comment.user.name}} on {{format_date comment.date_created}}</h5>
+                    <h5 class="comment-author ms-md-4 my-auto pe-2">Posted by {{comment.user.name}} on {{format_date comment.date_created}}</h5>
                 </div>
             {{/each}}
             </div>
         </section>
     {{/if}}
     {{!-- If the user is logged in, display a comment form --}}
-    {{#if loggedIn}}
-        <h4> WOOOOOOOOOOOOOO   </h4>
-    {{/if}}
 
 </main>

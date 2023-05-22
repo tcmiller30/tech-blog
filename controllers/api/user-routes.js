@@ -66,7 +66,7 @@ router.get('/', async (req, res) => {
 });
 
 // Check if user is logged in
-router.get('/status', (req, res) => {
+router.get('/login', (req, res) => {
     if(req.session.logged_in){
         console.log(`Logged in as ${req.session.name}`);
         res.json({logged_in: true});

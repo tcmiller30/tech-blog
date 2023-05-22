@@ -39,3 +39,30 @@ const delButtonHandler = async (event) => {
       }
     }
   };
+
+  document
+    .getElementById('deletePostBtn')
+    .addEventListener('click', delButtonHandler);
+
+// Update the current post using the update route
+const newCommentHandler = async (event) => {
+    event.preventDefault();
+    const content = document.getElementById('commentInput').value.trim();
+    console.log(content)
+        const response = await fetch('/api/comments', {
+            method: 'POST',
+            body: JSON.stringify({ content, post_id }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+        console.log(response)
+        if (response.ok) {
+            document.location.replace('/dashboard');
+        }
+        else {
+            alert(response.statusText);
+        }
+}
+
+document
+    .getElementById('CommentForm')
+    .addEventListener('submit', newCommentHandler);

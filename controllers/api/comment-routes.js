@@ -8,7 +8,6 @@ router.post('/', async (req, res) => {
         const commentData = await Comment.create({
         //request body should look like this...
         // {
-        //     "title": "Test Title",
         //     "content": "Test Content",
         //     "user_id": 1,
         //     "post_id": 1

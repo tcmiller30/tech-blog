@@ -64,8 +64,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
 // Get one project from database and render
 router.get('/posts/:id', async (req, res) => {
     try{
+        console.log(req.session.user_id)
         const postData = await Post.findByPk(req.params.id, {
-            attributes: ['id', 'title', 'content', 'date_created'],
+            attributes: ['id', 'title', 'content', 'date_created', 'user_id'],
             include: [
                 {
                     model: User,
@@ -83,7 +84,8 @@ router.get('/posts/:id', async (req, res) => {
 console.log(post);
         res.render('postPage', {
             post,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            is_owner: req.session.user_id === post.user_id,
         });
     } catch (err) {
         res.status(500).json(err);
