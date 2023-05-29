@@ -9,13 +9,14 @@ router.post('/', async (req, res) => {
         //request body should look like this...
         // {
         //     "content": "Test Content",
-        //     "user_id": 1,
-        //     "post_id": 1
-        // }
+        //     "user_id": 1,   //this is the user who is making the comment
+        //     "post_id": 1    //this is the post that is being commented on
+        // } 
             content: req.body.content,
             user_id: req.session.user_id,
             post_id: req.body.post_id,
         });
+        res.status(200).json(commentData);
     }
     catch (err) {
         console.log(err);

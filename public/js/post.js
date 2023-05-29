@@ -20,49 +20,26 @@ const newPostHandler = async (event) => {
 };
 
 document
-    .getElementById('newPostForm')
+    .querySelector('#newPostForm')
     .addEventListener('submit', newPostHandler);
     
 // Delete the current post using the delete route
 const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('user_id')) {
-      const id = event.target.getAttribute('user_id');
-  
-      const response = await fetch(`/api/posts/${id}`, {
+    event.preventDefault();
+    const id = document.location.pathname.split('/')[2];
+    const response = await fetch(`/api/posts/${id}`, {
         method: 'DELETE',
-      });
-  
-      if (response.ok) {
+    });
+    if (response.ok) {
         document.location.replace('/dashboard');
-      } else {
-        alert('Failed to delete project');
-      }
     }
-  };
+    else {
+        alert(response.statusText);
+    }
+};
 
   document
-    .getElementById('deletePostBtn')
+    .querySelector('#deletePostBtn')
     .addEventListener('click', delButtonHandler);
 
 // Update the current post using the update route
-const newCommentHandler = async (event) => {
-    event.preventDefault();
-    const content = document.getElementById('commentInput').value.trim();
-    console.log(content)
-        const response = await fetch('/api/comments', {
-            method: 'POST',
-            body: JSON.stringify({ content, post_id }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-        console.log(response)
-        if (response.ok) {
-            document.location.replace('/dashboard');
-        }
-        else {
-            alert(response.statusText);
-        }
-}
-
-document
-    .getElementById('CommentForm')
-    .addEventListener('submit', newCommentHandler);

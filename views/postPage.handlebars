@@ -11,8 +11,8 @@
         {{!-- If logged in user = Current Post's user_id, display delete button --}}
        
         {{#if is_owner}}
-            <<button id="deletePostBtn" class="btn btn-danger me-md-4">Delete Post</button>
-            <button id="editPostBtn" class="btn btn-primary  me-md-4">Edit Post</button>>
+            <button id="deletePostBtn" class="btn btn-danger me-md-4">Delete Post</button>
+            <button id="editPostBtn" class="btn btn-primary  me-md-4">Edit Post</button>
         {{/if}}
     </div>
     {{!-- If a post has comments, display the comments in a new box below the post-card --}}
@@ -20,8 +20,8 @@
     {{!-- If the user is logged in, display a comment form --}}
     {{#if logged_in}}
         <form id="commentForm" class="comment-form d-flex flex-column align-items-center justify-content-center w-100 mx-auto">
-            <textarea class="comment-input w-75 mx-auto" name="comment-content" id="commentInput" cols="30" rows="2" placeholder="Enter your comment here..."></textarea>
-            <button id="submitCommentBtn" class="btn btn-primary submit-comment-btn mt-2">Submit Comment</button>
+            <textarea class="comment-input w-75 mx-auto" id="commentInput" cols="30" rows="2" placeholder="Enter your comment here..."></textarea>
+            <button id="submitCommentBtn" type="submit" class="btn btn-primary submit-comment-btn mt-2">Submit Comment</button>
         </form>
     {{/if}}
     {{#if post.comments.length}}
@@ -40,3 +40,5 @@
     {{!-- If the user is logged in, display a comment form --}}
 
 </main>
+<script src="/js/post.js"></script>
+<script src="/js/comment.js"></script>
