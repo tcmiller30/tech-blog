@@ -86,7 +86,7 @@ console.log(post);
             post,
             logged_in: req.session.logged_in,
             postOwner: req.session.user_id === post.user_id,
-            commentOwner: req.session.user_id === Comment.user_id
+            // commentOwner: req.session.user_id === Comment.user_id
         });
     } catch (err) {
         res.status(500).json(err);

@@ -34,7 +34,7 @@
                     <h5 class="comment-author ms-md-4 my-auto pe-2">Posted by {{comment.user_id}} on {{format_date comment.date_created}}</h5>
                     {{!-- If logged in user = Current Comment's user_id, display delete button --}}
                     {{#if commentOwner}}
-                        <button id="deleteCommentBtn" class="btn btn-danger me-md-4">Delete Comment</button>
+                        {{!-- <button id="deleteCommentBtn" class="btn btn-danger me-md-4">Delete Comment</button> --}}
                     {{/if}}
                 </div>
             {{/each}}

@@ -138,6 +138,12 @@ border-top: 3px solid var(--space);
 .btn{
     text-align: center;
 }
+.comment-delete{
+    position: relative;
+    left: 0;
+    top: 0;
+
+}
 @media screen and (max-width: 576px){
     .nav-link{
         font-size: 16px;
