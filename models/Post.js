@@ -15,12 +15,12 @@ Post.init(
         // Title of post
         title:{
             type: DataTypes.STRING,
-            allownull: false,
+            allowNull: false,
         },
         // Date of post
         date_created:{
             type: DataTypes.DATE,
-            allownull: false,
+            allowNull: false,
             defaultValue: DataTypes.NOW,
         },
         // Content of post

@@ -10,12 +10,11 @@
     <div class="post-card-footer w-100 mx-0 py-1">
         {{!-- If logged in user = Current Post's user_id, display delete button --}}
        
-        {{#if is_owner}}
             <button id="deletePostBtn" class="btn btn-danger me-md-4">Delete Post</button>
+        {{#if is_owner}}
             <button id="editPostBtn" class="btn btn-primary  me-md-4">Edit Post</button>
         {{/if}}
     </div>
-    {{!-- If a post has comments, display the comments in a new box below the post-card --}}
 </div>
     {{!-- If the user is logged in, display a comment form --}}
     {{#if logged_in}}
@@ -24,6 +23,7 @@
             <button id="submitCommentBtn" type="submit" class="btn btn-primary submit-comment-btn mt-2">Submit Comment</button>
         </form>
     {{/if}}
+    {{!-- If a post has comments, display the comments in a new box below the post-card --}}
     {{#if post.comments.length}}
         <section class="comments w-50 mx-auto">
             <h4 class="post-comments-header text-center p-2">Comments</h4>
@@ -31,14 +31,17 @@
             {{#each post.comments as |comment|}}
                 <div class="post-comment d-flex align-items-center justify-space-between mx-auto mb-3 w-100 py-3">
                     <h5 class="comment-content me-md-4 my-auto">{{comment.content}}</h5>
-                    <h5 class="comment-author ms-md-4 my-auto pe-2">Posted by {{comment.user.name}} on {{format_date comment.date_created}}</h5>
+                    <h5 class="comment-author ms-md-4 my-auto pe-2">Posted by {{comment.user_id}} on {{format_date comment.date_created}}</h5>
+                    {{!-- If logged in user = Current Comment's user_id, display delete button --}}
+                    {{#if comment.is_owner}}
+                        <button id="deleteCommentBtn" class="btn btn-danger me-md-4">Delete Comment</button>
+                    {{/if}}
                 </div>
             {{/each}}
             </div>
         </section>
     {{/if}}
-    {{!-- If the user is logged in, display a comment form --}}
 
 </main>
-<script src="/js/post.js"></script>
+<script src="/js/deletePost.js"></script>
 <script src="/js/comment.js"></script>

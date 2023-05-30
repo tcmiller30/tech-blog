@@ -14,12 +14,12 @@ Comment.init({
     // Comment content
     content:{
         type: DataTypes.STRING,
-        allownull: false,
+        allowNull: false,
     },
     // Date of comment
     date_created:{
         type: DataTypes.DATE,
-        allownull: false,
+        allowNull: false,
         defaultValue: DataTypes.NOW,
     },
     // User id for data relation
