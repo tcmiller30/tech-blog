@@ -85,7 +85,8 @@ console.log(post);
         res.render('postPage', {
             post,
             logged_in: req.session.logged_in,
-            is_owner: req.session.user_id === post.user_id,
+            postOwner: req.session.user_id === post.user_id,
+            commentOwner: req.session.user_id === Comment.user_id
         });
     } catch (err) {
         res.status(500).json(err);
